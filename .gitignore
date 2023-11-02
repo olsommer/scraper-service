@@ -4,6 +4,5 @@ npm-debug.log
 /*.env
 
 .cache/
-
 .cache/puppeteer
 .cache/puppeteer/**/*
