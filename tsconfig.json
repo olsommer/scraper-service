@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Specify the ECMAScript target version (ES6 or higher is common for Node.js)
+    "module": "CommonJS", // Specify the module system (CommonJS for Node.js)
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Source code directory
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Allow default imports from modules with no default export
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file and directory casing
+    "sourceMap": true // Generate source maps for debugging
+  },
+  "include": ["src/**/*"], // Specify the files or globs to include in the compilation
+  "exclude": ["node_modules"] // Specify directories or files to exclude from compilation
+}
