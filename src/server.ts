@@ -13,7 +13,7 @@ const MAX_CONCURRENT_CRAWLERS = 10;
   const cluster = await Cluster.launch({
     concurrency: Cluster.CONCURRENCY_CONTEXT,
     maxConcurrency: MAX_CONCURRENT_CRAWLERS,
-    puppeteerOptions: { headless: "new" },
+    puppeteerOptions: { headless: "new", args: ["--no-sandbox"] },
   });
 
   // Define a task
