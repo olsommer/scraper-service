@@ -1,5 +1,6 @@
 // src/crawler.ts
 import express from "express";
+import cors from "cors";
 import { Cluster } from "puppeteer-cluster";
 import { crawlWebsite } from "./crawler";
 
@@ -23,6 +24,12 @@ const MAX_CONCURRENT_CRAWLERS = 10;
   });
 
   /* EXPRESS */
+  // Express middleware
+  const corsOptions = {
+    origin: "https://scraper-service-127d759d0c0e.herokuapp.com",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  app.use(cors(corsOptions));
   app.get("/scrape", async (req, res) => {
     if (!req.query.url) {
       return res.end("Please specify url like this: ?url=example.com");
