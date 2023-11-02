@@ -22,7 +22,9 @@ export async function crawlWebsite(page: Page, url: string) {
 
   // Query for an element handle.
   // const element = await page.waitForSelector("::-p-xpath(body)");
-  const content = await page.content();
+  const htmlWithDoctype = await page.content();
+  // Remove the doctype declaration from the HTML content
+  const contentWithoutDoctype = htmlWithDoctype.replace(/^<!DOCTYPE[^>]+>/, "");
 
-  return content;
+  return contentWithoutDoctype;
 }
