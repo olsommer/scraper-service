@@ -24,7 +24,7 @@ export async function crawlWebsite(page: Page, url: string) {
   // const element = await page.waitForSelector("::-p-xpath(body)");
   const htmlWithDoctype = await page.content();
   // Remove the doctype declaration from the HTML content
-  const contentWithoutDoctype = htmlWithDoctype.replace(/^<!DOCTYPE[^>]+>/, "");
+  // const contentWithoutDoctype = htmlWithDoctype.replace(/^<!DOCTYPE[^>]+>/, "");
 
-  return contentWithoutDoctype;
+  return htmlWithDoctype;
 }

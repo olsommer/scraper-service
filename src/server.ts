@@ -6,7 +6,7 @@ import { crawlWebsite } from "./crawler";
 
 const app = express();
 const port = process.env.PORT || 3000;
-const MAX_CONCURRENT_CRAWLERS = 10;
+const MAX_CONCURRENT_CRAWLERS = 3;
 
 /* PUPPTR */
 (async () => {
@@ -39,7 +39,7 @@ const MAX_CONCURRENT_CRAWLERS = 10;
 
       // respond with image
       res.writeHead(200, {
-        "Content-Type": "text/html; charset=utf-8",
+        "Content-Type": "text/html",
         "Content-Length": content.length,
       });
       res.end(content);
